@@ -211,6 +211,117 @@ Point the custom domain `www.srisamayapurammariammanspatna.org` to the GitHub Pa
 
 ---
 
+## Feature 7 — Temple Point of Sale (Counter Collections)
+
+### Overview
+A tablet-based POS system at the temple counter to collect cash and UPI payments from walk-in devotees, print receipts, and automatically sync all transactions into a unified accounting ledger alongside online donations.
+
+### Hardware Required
+
+| Item | Recommended | Approx Cost |
+|------|-------------|-------------|
+| Tablet | Any Android tablet or iPad | ₹8,000–15,000 |
+| Bluetooth Thermal Printer | 58mm receipt printer | ₹2,000–4,000 |
+| UPI QR Standee | Printed static QR code | ₹200–500 |
+| Cash Drawer (optional) | Small lockable cash box | ₹1,500–3,000 |
+
+### Payment Methods at Counter
+
+**Cash** — cashier enters amount manually, prints receipt.
+
+**UPI (Static QR)** — printed QR code on standee; devotee scans and pays; cashier verifies on phone and prints receipt. Free, no setup needed.
+
+**UPI (Dynamic QR via Razorpay POS)** — cashier enters amount on tablet; unique QR generated per transaction; auto-confirmed on payment. Recommended for higher volumes.
+
+### Software Options
+
+**Option 1 — Google Forms + Google Sheets (Free, immediate)**
+- Cashier fills a Google Form per transaction (Name, Phone, Seva, Amount, Payment mode)
+- Responses auto-saved to Google Sheet
+- Print receipt via a simple Bluetooth printer app
+- Best for: getting started quickly with zero cost
+
+**Option 2 — Razorpay POS App (Recommended for Phase 1)**
+- Free app on Android/iOS tablet
+- Accepts UPI, cards, cash entries
+- Auto-generates and sends digital receipts via SMS/email
+- All counter transactions appear in the same Razorpay dashboard as online donations
+- Works offline; syncs when internet is available
+
+**Option 3 — Custom Temple POS (Phase 2)**
+- Tablet interface built specifically for the temple
+- Full seva catalogue with prices pre-loaded
+- Cash + UPI tracking with running daily totals
+- Prints branded receipts via Bluetooth
+- Syncs to Firebase / Google Sheets — same database as website and devotee login
+- Most control; moderate development effort
+
+### Receipt Format
+
+```
+Sri Samayapuram Mahamariamman Devasthanam
+Srirangapatna, Mandya District — 571807
+------------------------------------------
+Receipt No  : TMP-2026-00123
+Date & Time : 26-Apr-2026  11:30 AM
+------------------------------------------
+Devotee     : Arun Kumar
+Phone       : +91 97911 XXXXX
+Seva        : Abhishekam
+Date of Seva: 27-Apr-2026
+------------------------------------------
+Amount      : ₹501
+Payment     : UPI / Cash
+------------------------------------------
+Om Shakti. Jai Mata Di.
+Thank you for your offering 🙏
+samayapuramtemple.spatna@gmail.com
+```
+
+### Unified Accounting Integration
+
+| Transaction Source | Where It Goes |
+|-------------------|--------------|
+| Online e-Hundi donations | Razorpay dashboard → Google Sheets |
+| Online seva bookings | Google Sheets (Apps Script) |
+| Counter UPI (Razorpay POS) | Same Razorpay dashboard |
+| Counter cash | Manual entry → Google Sheets |
+| **All combined** | Single Google Sheet — daily / monthly reports |
+
+### Reports Available Automatically
+- Daily cash vs UPI split
+- Seva-wise revenue (Abhishekam, Archana, Annadaan etc.)
+- Monthly and annual totals
+- Donor/devotee list with contact details
+- Accessible from any device via Google account
+
+### Recommended Stack
+
+```
+Online (Website)             Temple Counter
+────────────────             ──────────────────────
+Razorpay e-Hundi    ──┐      Razorpay POS App (tablet)
+e-Seva booking      ──┼──→   Google Sheets (unified ledger)
+Contact form        ──┘      ↓
+                             Monthly report → Gmail / Admin
+```
+
+### Implementation Phases
+
+| Phase | Scope | Effort |
+|-------|-------|--------|
+| Phase 1 | Static UPI QR + Google Form + Sheets | 1 session |
+| Phase 2 | Razorpay POS on tablet + receipt printing | 1 session |
+| Phase 3 | Custom POS integrated with website + devotee login | 2–3 sessions |
+
+### What's Needed from Temple Admin
+- Android tablet or iPad at the counter
+- Bluetooth thermal printer (58mm)
+- Razorpay account (shared with e-Hundi — same account)
+- Approved seva catalogue with prices (shared with e-Seva feature)
+
+---
+
 ## Implementation Order (Recommended)
 
 | Priority | Feature | Dependency | Effort |
@@ -222,6 +333,9 @@ Point the custom domain `www.srisamayapurammariammanspatna.org` to the GitHub Pa
 | 5 | Devotee Login | Firebase project | 2 sessions |
 | 6 | e-Seva Phase 2 (With Payment) | Razorpay + Login done | 1 session |
 | 7 | Custom Domain | Domain purchase | 1 session |
+| 8 | Temple POS Phase 1 | Tablet + printer | 1 session |
+| 9 | Temple POS Phase 2 | Razorpay account | 1 session |
+| 10 | Temple POS Phase 3 (Custom) | After Login + e-Seva done | 2–3 sessions |
 
 ---
 
@@ -234,3 +348,5 @@ Point the custom domain `www.srisamayapurammariammanspatna.org` to the GitHub Pa
 - [ ] Google Analytics account created and ID shared *(tech admin)*
 - [ ] Domain `www.srisamayapurammariammanspatna.org` purchased *(admin)*
 - [ ] 80G registration certificate available for donation receipts *(temple trust)*
+- [ ] Tablet and Bluetooth thermal printer procured for temple counter *(temple admin)*
+- [ ] UPI QR code (static) printed and placed at counter *(temple admin)*
