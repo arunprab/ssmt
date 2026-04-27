@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Large video files (too big for GitHub — store separately)
+images/videos/*.mov
+images/videos/*.mp4
+
+# Duplicate/typo files
+images/gallery-1.jog.JPG
+" ssmt-logo.jpg"

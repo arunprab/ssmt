@@ -1,0 +1,39 @@
+Act as Full stack developer and use ‘Front end’ development skills. 
+Context : I wanted to help NGO (Temple).
+They have this current website (URL : https://srisamayapuramashrama.com/index.php). 
+However, they wanted to plan a create new website for their prestigious temple project, which is going to go live next month. Temple name called as ‘Sri Samayapuram Mahamariamman Devasthanam’
+Domain and URL for this new temple website will be ‘www.srisamayapurammariammanspatna.org’. Domain yet to be claimed or registered.
+
+Please help me to build good interactive website which should have the following.
+1.	Home :  This should be the landing page. It should be feature rick designed specifically for Hinduism websites. It offers a variety of customization options and functionalities to help you create a professional, culturally rich, and engaging online presence. It possible we should have some of the Photos to be displayed and scrolling option to be available from the latest update
+2.	About the Goddess : Details about the Goddess and why this temple was built for this Goddess (Sri Samayapuram Mahamariamman). You can take further content from this page (https://srisamayapuramashrama.com/ourgodess.php)
+3.	About Temple Structure : This page should talk about Importance of the temple location, science behind the temple other importance structural elements (such as carved pillars in detail). We can also provide photos for all the important elements of the temple. More details on this page (https://srisamayapuramashrama.com/temple-project.php)
+4.	News & Events : This is a new page which should have upcoming events such as Kumabhishegam. It should be a placeholder for admin to add details on regular basis.
+5.	Photo Gallery : We should have Photo Gallery on the specific events (Day or Month wise) browsing experience
+6.	Video Gallery : We should have Video Gallery on the specific events (Day or Month wise) browsing experience
+7.	Contact Us : Same details as in this page (https://srisamayapuramashrama.com/contact.php)
+
+Additional instructions to construct this new website :
+1.	Use good Front-end development skills. 
+2.	Professional Design and Easy to Customize
+3.	Retina Ready
+4.	Clean Template
+5.	Header & Footer and copyright to be maintained on all pages.
+6.	Elementor Gallery
+7.	Free images sample like to demo. Images/Photos will be shared.
+8.	Modern & Unique Design. Mobile-Friendly Layout
+9.	100% Responsive For All Kind Of Devices
+10.	Mobile-Friendly Layout
+11.	Fully New Trends Design
+12.	Mobile Browsers Compatible
+13.	Font Awesome Icon
+14.	Fully Customizable
+15.	Header Customization
+16.	Footer Customization
+17.	Menu Customization
+18.	Dynamic Content
+
+Reference Logo & Temple information at
+/Users/arunkpr/kiro-ws/ssmt/ssmt-logo.jpg
+/Users/arunkpr/kiro-ws/ssmt/ssmt/Temple-Info.docx
+

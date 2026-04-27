@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery | Sri Samayapuram Mahamariamman Devasthanam</title>
+    <meta name="description" content="Video gallery of Sri Samayapuram Mahamariamman Devasthanam - temple events, ceremonies, and construction progress.">
+    <link rel="icon" type="image/jpeg" href="../ssmt-logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- ═══════════════════════════════════════════════
+         Google Analytics 4
+         1. Go to analytics.google.com → create a free account
+         2. Add this site as a property → get your Measurement ID (G-XXXXXXXXXX)
+         3. Replace BOTH occurrences of G-XXXXXXXXXX below with your real ID
+         4. Remove this comment block once configured
+    ═══════════════════════════════════════════════ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <img src="../ssmt-logo.jpg" alt="Temple Logo">
+                    <div class="logo-text">
+                        <h1>Sri Samayapuram Mahamariamman Devasthanam</h1>
+                        <span class="tagline">Srirangapatna, Mandya District, Karnataka</span>
+                    </div>
+                </a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="goddess.html">About the Goddess</a></li>
+                <li><a href="temple-structure.html">About the Temple</a></li>
+                <li><a href="e-seva.html">Online Service</a></li>
+                <li><a href="news-events.html">News & Events</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">General Information</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-banner" style="background-image: url('../images/pooja-ceremony.jpg')">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h2>Video Gallery</h2>
+            <nav class="breadcrumb"><a href="../index.html">Home</a> <i class="fas fa-chevron-right"></i> Video Gallery</nav>
+        </div>
+    </section>
+
+    <section class="section page-content">
+        <div class="container">
+            <!-- Filter Tabs -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Videos</button>
+                <button class="filter-btn" data-filter="construction">Construction</button>
+                <button class="filter-btn" data-filter="ceremony">Ceremonies</button>
+                <button class="filter-btn" data-filter="discourse">Discourses</button>
+            </div>
+
+            <!-- Date Browser -->
+            <div class="gallery-date-browser">
+                <button class="date-nav-btn" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                <span class="current-period" id="currentPeriod">April 2026</span>
+                <button class="date-nav-btn" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Video Grid -->
+            <div class="video-gallery-grid" id="videoGallery">
+                <div class="video-card" data-category="construction" data-date="2026-04">
+                    <div class="video-thumb">
+                        <img src="../images/construction-progress.jpg" alt="Construction Progress" loading="lazy">
+                        <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Temple Construction Progress — April 2026</h4>
+                        <span class="video-meta"><i class="fas fa-calendar"></i> April 2026 &nbsp;|&nbsp; <i class="fas fa-clock"></i> 5:30</span>
+                    </div>
+                </div>
+                <div class="video-card" data-category="ceremony" data-date="2026-03">
+                    <div class="video-thumb">
+                        <img src="../images/pooja-ceremony.jpg" alt="Pooja Ceremony" loading="lazy">
+                        <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Special Pooja Ceremony — March 2026</h4>
+                        <span class="video-meta"><i class="fas fa-calendar"></i> March 2026 &nbsp;|&nbsp; <i class="fas fa-clock"></i> 12:45</span>
+                    </div>
+                </div>
+                <div class="video-card" data-category="discourse" data-date="2026-03">
+                    <div class="video-thumb">
+                        <img src="../images/guru-swamiji.jpg" alt="Swamiji Discourse" loading="lazy">
+                        <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Swamiji's Discourse on Devotion</h4>
+                        <span class="video-meta"><i class="fas fa-calendar"></i> March 2026 &nbsp;|&nbsp; <i class="fas fa-clock"></i> 28:15</span>
+                    </div>
+                </div>
+                <div class="video-card" data-category="construction" data-date="2026-02">
+                    <div class="video-thumb">
+                        <img src="../images/pillar-carving.jpg" alt="Stone Carving" loading="lazy">
+                        <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Artisans at Work — Stone Carving</h4>
+                        <span class="video-meta"><i class="fas fa-calendar"></i> February 2026 &nbsp;|&nbsp; <i class="fas fa-clock"></i> 8:20</span>
+                    </div>
+                </div>
+                <div class="video-card" data-category="ceremony" data-date="2026-01">
+                    <div class="video-thumb">
+                        <img src="../images/goddess-deity.jpg" alt="Abhishekam" loading="lazy">
+                        <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Abhishekam to the Goddess</h4>
+                        <span class="video-meta"><i class="fas fa-calendar"></i> January 2026 &nbsp;|&nbsp; <i class="fas fa-clock"></i> 15:00</span>
+                    </div>
+                </div>
+                <div class="video-card" data-category="discourse" data-date="2025-12">
+                    <div class="video-thumb">
+                        <img src="../images/campus-aerial.jpg" alt="Temple Tour" loading="lazy">
+                        <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Virtual Temple Tour</h4>
+                        <span class="video-meta"><i class="fas fa-calendar"></i> December 2025 &nbsp;|&nbsp; <i class="fas fa-clock"></i> 10:30</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Modal -->
+            <div class="video-modal" id="videoModal">
+                <div class="video-modal-content">
+                    <button class="video-modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
+                    <div class="video-placeholder">
+                        <i class="fas fa-video"></i>
+                        <p>Video player will be embedded here.<br>YouTube/Vimeo links can be added by the administrator.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-notice">
+                <i class="fas fa-info-circle"></i>
+                <p><strong>Note:</strong> Sample thumbnails shown for demo. Actual videos (YouTube/Vimeo embeds) will be added by the administrator. Videos can be organized by event, date, and category.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-grid">
+        <div class="footer-col"><div class="footer-logo"><img src="../ssmt-logo.jpg" alt="Temple Logo"><h3>Sri Samayapuram Mahamariamman Devasthanam</h3></div><p>A magnificent Dravidian temple dedicated to the all-powerful Goddess Sri Samayapuram MahaMariamman, built on the sacred banks of river Cauvery at Srirangapatna.</p></div>
+        <div class="footer-col"><h3>Quick Links</h3><ul><li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="goddess.html"><i class="fas fa-chevron-right"></i> About the Goddess</a></li><li><a href="temple-structure.html"><i class="fas fa-chevron-right"></i> About the Temple</a></li><li><a href="e-seva.html"><i class="fas fa-chevron-right"></i> Online Service</a></li><li><a href="news-events.html"><i class="fas fa-chevron-right"></i> News & Events</a></li><li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i> General Information</a></li></ul></div>
+        <div class="footer-col"><h3>Contact Info</h3><ul class="contact-list"><li><i class="fas fa-map-marker-alt"></i> No.163 & 166, Kirangur Post, Baburayanakoppalu, Srirangapatna, Mandya District – 571807</li><li><i class="fas fa-phone-alt"></i> +91 97911 67265</li><li><i class="fas fa-envelope"></i> samayapuramtemple.spatna@gmail.com</li></ul><div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div>
+    </div><div class="footer-bottom"><p>&copy; 2026 Sri Samayapuram Mahamariamman Devasthanam. All Rights Reserved.</p><div class="visitor-counter"><i class="fas fa-users"></i><span>Visitors: <strong id="visitor-count">—</strong></span></div><p>www.srisamayapurammariammanspatna.org</p></div></div></footer>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+    <script src="../js/main.js"></script>
+</body>
+</html>

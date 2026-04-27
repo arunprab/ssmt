@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Sri Samayapuram Mahamariamman Devasthanam</title>
+    <meta name="description" content="Photo gallery of Sri Samayapuram Mahamariamman Devasthanam - temple construction, events, and ceremonies.">
+    <link rel="icon" type="image/jpeg" href="../ssmt-logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- ═══════════════════════════════════════════════
+         Google Analytics 4
+         1. Go to analytics.google.com → create a free account
+         2. Add this site as a property → get your Measurement ID (G-XXXXXXXXXX)
+         3. Replace BOTH occurrences of G-XXXXXXXXXX below with your real ID
+         4. Remove this comment block once configured
+    ═══════════════════════════════════════════════ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <img src="../ssmt-logo.jpg" alt="Temple Logo">
+                    <div class="logo-text">
+                        <h1>Sri Samayapuram Mahamariamman Devasthanam</h1>
+                        <span class="tagline">Srirangapatna, Mandya District, Karnataka</span>
+                    </div>
+                </a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="goddess.html">About the Goddess</a></li>
+                <li><a href="temple-structure.html">About the Temple</a></li>
+                <li><a href="e-seva.html">Online Service</a></li>
+                <li><a href="news-events.html">News & Events</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">General Information</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-banner" style="background-image: url('../images/temple-front.jpg')">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h2>Photo Gallery</h2>
+            <nav class="breadcrumb"><a href="../index.html">Home</a> <i class="fas fa-chevron-right"></i> Photo Gallery</nav>
+        </div>
+    </section>
+
+    <section class="section page-content">
+        <div class="container">
+            <!-- Filter Tabs -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="construction">Construction</button>
+                <button class="filter-btn" data-filter="ceremony">Ceremonies</button>
+                <button class="filter-btn" data-filter="architecture">Architecture</button>
+                <button class="filter-btn" data-filter="campus">Campus</button>
+            </div>
+
+            <!-- Month/Year Browser -->
+            <div class="gallery-date-browser">
+                <button class="date-nav-btn" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                <span class="current-period" id="currentPeriod">April 2026</span>
+                <button class="date-nav-btn" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="photo-gallery-grid" id="photoGallery">
+                <div class="gallery-card" data-category="construction" data-date="2026-04">
+                    <div class="gallery-thumb">
+                        <img src="../images/construction-progress.jpg" alt="Temple Construction Progress" loading="lazy">
+                        <div class="gallery-overlay">
+                            <button class="gallery-zoom" aria-label="View full size"><i class="fas fa-search-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="gallery-info"><h4>Temple Construction Progress</h4><span>April 2026</span></div>
+                </div>
+                <div class="gallery-card" data-category="architecture" data-date="2026-04">
+                    <div class="gallery-thumb">
+                        <img src="../images/gopuram-main.jpg" alt="Gopuram Architecture" loading="lazy">
+                        <div class="gallery-overlay"><button class="gallery-zoom" aria-label="View full size"><i class="fas fa-search-plus"></i></button></div>
+                    </div>
+                    <div class="gallery-info"><h4>Gopuram Architecture</h4><span>April 2026</span></div>
+                </div>
+                <div class="gallery-card" data-category="ceremony" data-date="2026-03">
+                    <div class="gallery-thumb">
+                        <img src="../images/goddess-deity.jpg" alt="Deity Decoration" loading="lazy">
+                        <div class="gallery-overlay"><button class="gallery-zoom" aria-label="View full size"><i class="fas fa-search-plus"></i></button></div>
+                    </div>
+                    <div class="gallery-info"><h4>Deity Decoration</h4><span>March 2026</span></div>
+                </div>
+                <div class="gallery-card" data-category="construction" data-date="2026-03">
+                    <div class="gallery-thumb">
+                        <img src="../images/pillar-carving.jpg" alt="Stone Pillar Carving" loading="lazy">
+                        <div class="gallery-overlay"><button class="gallery-zoom" aria-label="View full size"><i class="fas fa-search-plus"></i></button></div>
+                    </div>
+                    <div class="gallery-info"><h4>Stone Pillar Carving</h4><span>March 2026</span></div>
+                </div>
+                <div class="gallery-card" data-category="architecture" data-date="2026-02">
+                    <div class="gallery-thumb">
+                        <img src="../images/maha-mandapam.jpg" alt="Mandapam Structure" loading="lazy">
+                        <div class="gallery-overlay"><button class="gallery-zoom" aria-label="View full size"><i class="fas fa-search-plus"></i></button></div>
+                    </div>
+                    <div class="gallery-info"><h4>Mandapam Structure</h4><span>February 2026</span></div>
+                </div>
+                <div class="gallery-card" data-category="ceremony" data-date="2026-02">
+                    <div class="gallery-thumb">
+                        <img src="../images/pooja-ceremony.jpg" alt="Pooja Ceremony" loading="lazy">
+                        <div class="gallery-overlay"><button class="gallery-zoom" aria-label="View full size"><i class="fas fa-search-plus"></i></button></div>
+                    </div>
+                    <div class="gallery-info"><h4>Pooja Ceremony</h4><span>February 2026</span></div>
+                </div>
+                <div class="gallery-card" data-category="campus" data-date="2026-01">
+                    <div class="gallery-thumb">
+                        <img src="../images/campus-aerial.jpg" alt="Temple Campus View" loading="lazy">
+                        <div class="gallery-overlay"><button class="gallery-zoom" aria-label="View full size"><i class="fas fa-search-plus"></i></button></div>
+                    </div>
+                    <div class="gallery-info"><h4>Temple Campus View</h4><span>January 2026</span></div>
+                </div>
+                <div class="gallery-card" data-category="campus" data-date="2026-01">
+                    <div class="gallery-thumb">
+                        <img src="../images/IMG-20220131-WA0038.jpg" alt="River Cauvery at Temple" loading="lazy">
+                        <div class="gallery-overlay"><button class="gallery-zoom" aria-label="View full size"><i class="fas fa-search-plus"></i></button></div>
+                    </div>
+                    <div class="gallery-info"><h4>River Cauvery at Temple Site</h4><span>January 2026</span></div>
+                </div>
+                <div class="gallery-card" data-category="construction" data-date="2025-12">
+                    <div class="gallery-thumb">
+                        <img src="../images/IMG-20220131-WA0039.jpg" alt="Foundation Work" loading="lazy">
+                        <div class="gallery-overlay"><button class="gallery-zoom" aria-label="View full size"><i class="fas fa-search-plus"></i></button></div>
+                    </div>
+                    <div class="gallery-info"><h4>Foundation Work</h4><span>December 2025</span></div>
+                </div>
+            </div>
+
+            <!-- Lightbox -->
+            <div class="lightbox" id="lightbox">
+                <button class="lightbox-close" aria-label="Close"><i class="fas fa-times"></i></button>
+                <button class="lightbox-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                <button class="lightbox-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+                <div class="lightbox-content">
+                    <img id="lightboxImg" src="" alt="">
+                    <div class="lightbox-caption" id="lightboxCaption"></div>
+                </div>
+            </div>
+
+            <div class="admin-notice">
+                <i class="fas fa-info-circle"></i>
+                <p><strong>Note:</strong> Sample images shown for demo purposes. Actual temple photos will be uploaded by the administrator. Photos can be organized by event, date (day/month), and category.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-grid">
+        <div class="footer-col"><div class="footer-logo"><img src="../ssmt-logo.jpg" alt="Temple Logo"><h3>Sri Samayapuram Mahamariamman Devasthanam</h3></div><p>A magnificent Dravidian temple dedicated to the all-powerful Goddess Sri Samayapuram MahaMariamman, built on the sacred banks of river Cauvery at Srirangapatna.</p></div>
+        <div class="footer-col"><h3>Quick Links</h3><ul><li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="goddess.html"><i class="fas fa-chevron-right"></i> About the Goddess</a></li><li><a href="temple-structure.html"><i class="fas fa-chevron-right"></i> About the Temple</a></li><li><a href="e-seva.html"><i class="fas fa-chevron-right"></i> Online Service</a></li><li><a href="news-events.html"><i class="fas fa-chevron-right"></i> News & Events</a></li><li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i> General Information</a></li></ul></div>
+        <div class="footer-col"><h3>Contact Info</h3><ul class="contact-list"><li><i class="fas fa-map-marker-alt"></i> No.163 & 166, Kirangur Post, Baburayanakoppalu, Srirangapatna, Mandya District – 571807</li><li><i class="fas fa-phone-alt"></i> +91 97911 67265</li><li><i class="fas fa-envelope"></i> samayapuramtemple.spatna@gmail.com</li></ul><div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div>
+    </div><div class="footer-bottom"><p>&copy; 2026 Sri Samayapuram Mahamariamman Devasthanam. All Rights Reserved.</p><div class="visitor-counter"><i class="fas fa-users"></i><span>Visitors: <strong id="visitor-count">—</strong></span></div><p>www.srisamayapurammariammanspatna.org</p></div></div></footer>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+    <script src="../js/main.js"></script>
+</body>
+</html>
