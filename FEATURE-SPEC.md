@@ -43,7 +43,7 @@ Replace the placeholder `G-XXXXXXXXXX` in all 9 HTML pages with the real GA4 Mea
 
 ### What's Needed from Temple Admin
 1. Go to analytics.google.com → create a free account
-2. Add the site as a property (`arunprab.github.io/ssmt`)
+2. Add the site as a property (`srisamayapurammariammanspatna.org`)
 3. Copy the Measurement ID (`G-XXXXXXXXXX`)
 4. Share it — we replace in all pages and push to GitHub
 
@@ -193,12 +193,12 @@ Devotees can make a one-time or recurring donation to the temple trust online us
 ## Feature 6 — Domain & Deployment
 
 ### Overview
-Point the custom domain `www.srisamayapurammariammanspatna.org` to the GitHub Pages site so the website is accessible at the proper URL instead of `arunprab.github.io/ssmt`.
+Point the custom domain `www.srisamayapurammariammanspatna.org` to the GitHub Pages site so the website is accessible at the proper URL now live at `srisamayapurammariammanspatna.org`.
 
 ### Steps
 1. Purchase domain from a registrar (GoDaddy / Namecheap / Google Domains)
 2. Add 4 DNS A-records pointing to GitHub's IP addresses
-3. Add CNAME record: `www` → `arunprab.github.io`
+3. Add CNAME record: `www` → `arunprab.github.io` *(already configured)*
 4. In GitHub repo Settings → Pages → add custom domain
 5. Enable **Enforce HTTPS** (free SSL via Let's Encrypt)
 
@@ -332,7 +332,7 @@ Contact form        ──┘      ↓
 | 4 | e-Hundi (Donations) | Razorpay account + KYC | 1–2 sessions |
 | 5 | Devotee Login | Firebase project | 2 sessions |
 | 6 | e-Seva Phase 2 (With Payment) | Razorpay + Login done | 1 session |
-| 7 | Custom Domain | Domain purchase | 1 session |
+| 7 | ~~Custom Domain~~ | ~~Domain purchase~~ | ✅ Done |
 | 8 | Temple POS Phase 1 | Tablet + printer | 1 session |
 | 9 | Temple POS Phase 2 | Razorpay account | 1 session |
 | 10 | Temple POS Phase 3 (Custom) | After Login + e-Seva done | 2–3 sessions |
@@ -346,7 +346,7 @@ Contact form        ──┘      ↓
 - [ ] Razorpay account created and KYC completed *(temple trust)*
 - [ ] Firebase project created and config keys shared *(tech admin)*
 - [ ] Google Analytics account created and ID shared *(tech admin)*
-- [ ] Domain `www.srisamayapurammariammanspatna.org` purchased *(admin)*
+- [x] Domain `www.srisamayapurammariammanspatna.org` purchased and live *(done)*
 - [ ] 80G registration certificate available for donation receipts *(temple trust)*
 - [ ] Tablet and Bluetooth thermal printer procured for temple counter *(temple admin)*
 - [ ] UPI QR code (static) printed and placed at counter *(temple admin)*

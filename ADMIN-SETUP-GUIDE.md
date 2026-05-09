@@ -26,7 +26,7 @@ never share the Gmail password.
 5. Property name: `SSMT Website`
 6. Select **India** as country, **Indian Rupee** as currency
 7. Select **Web** as platform
-8. Website URL: `arunprab.github.io/ssmt` (update to custom domain later)
+8. Website URL: `srisamayapurammariammanspatna.org`
 9. Click **Create stream**
 10. Copy the **Measurement ID** — looks like `G-XXXXXXXXXX`
 
@@ -168,7 +168,7 @@ const firebaseConfig = {
    - Category: `Hindu Temple`
    - Address: `No.163 & 166, Kirangur Post, Baburayanakoppalu, Srirangapatna, Mandya District – 571807`
    - Phone: `+91 97911 67265`
-   - Website: `https://arunprab.github.io/ssmt`
+   - Website: `https://www.srisamayapurammariammanspatna.org`
    - Hours: Add temple timings
 7. Verify ownership — Google will offer options:
    - Postcard to address (most common — takes 5–7 days)

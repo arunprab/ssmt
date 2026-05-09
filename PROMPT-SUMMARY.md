@@ -2,6 +2,7 @@
 
 **Project:** Sri Samayapuram Mahamariamman Devasthanam — Temple Website
 **GitHub:** https://github.com/arunprab/ssmt
+**Live URL:** https://www.srisamayapurammariammanspatna.org
 **Local Path:** `/Users/arunp/Documents/claude-projects/ssmt/`
 **Domain:** `www.srisamayapurammariammanspatna.org`
 **Last Updated:** April 2026
@@ -114,7 +115,7 @@ All images are local (no Unsplash URLs).
   2. Open Apps Script → paste doPost script → Deploy as web app
   3. Copy web app URL into `GOOGLE_SCRIPT_URL` in `js/main.js`
 - [ ] Replace `G-XXXXXXXXXX` in all 9 HTML files with real GA4 Measurement ID
-- [ ] Register domain `www.srisamayapurammariammanspatna.org`
+- [x] Domain `www.srisamayapurammariammanspatna.org` — registered and live
 - [ ] Update Kumbhabhishekam event dates when confirmed
 - [ ] Build e-Seva/e-Hundi/e-Donate functionality (currently placeholder)
 - [ ] Add ceremony photos to `images/gallery/ceremony/` and update `gallery-data.js`
@@ -134,4 +135,4 @@ Key fixes: `-webkit-sticky`, `-webkit-overflow-scrolling: touch`, CSS keyframe t
 
 Paste this at the start:
 
-> Referring to the SSMT temple website at `/Users/arunp/Documents/claude-projects/ssmt/` (GitHub: github.com/arunprab/ssmt), I want to...
+> Referring to the SSMT temple website at `/Users/arunp/Documents/claude-projects/ssmt/` (GitHub: github.com/arunprab/ssmt, Live: https://www.srisamayapurammariammanspatna.org), I want to...
