@@ -1,15 +1,20 @@
 # Project Prompt Summary
 
-**Project:** Sri Samayapuram Mahamariamman Devasthanam — Temple Website
+**Project:** Sri Samayapuram MahaMariamman Devasthanam — Temple Website
 **GitHub:** https://github.com/arunprab/ssmt
 **Live URL:** https://www.srisamayapurammariammanspatna.org
 **Local Path:** `/Users/arunp/Documents/claude-projects/ssmt/`
-**Domain:** `www.srisamayapurammariammanspatna.org`
-**Last Updated:** April 2026
+**Last Updated:** May 2026
 
-## What Was Built
+---
 
-A 7-page responsive Hindu temple website (pure HTML/CSS/JS, no frameworks) for the NGO temple project "Sri Samayapuram Mahamariamman Devasthanam" at Srirangapatna, Karnataka.
+## How to Continue in a New Chat
+
+Paste this at the start of any new session:
+
+> Referring to the SSMT temple website at `/Users/arunp/Documents/claude-projects/ssmt/` (GitHub: github.com/arunprab/ssmt, Live: https://www.srisamayapurammariammanspatna.org), I want to...
+
+---
 
 ## Pages
 
@@ -17,122 +22,112 @@ A 7-page responsive Hindu temple website (pure HTML/CSS/JS, no frameworks) for t
 |---|------|-----------|-------------|
 | 1 | `index.html` | Home | Hero slider, news ticker, highlights, gallery scroll, donation CTA |
 | 2 | `pages/goddess.html` | About the Goddess | Goddess intro + Ashtabhuja, legend, Guru bio with quotes |
-| 3 | `pages/temple-structure.html` | About the Temple | Sub-nav: Vision & Mission, Agama Shastra, Location, Structure (photo scroll + cards), Timelines |
+| 3 | `pages/temple-structure.html` | About the Temple | Vision & Mission, Agama Shastra, Location, Structure scroll + cards, Timelines |
 | 4 | `pages/e-seva.html` | Online Service | e-Seva / e-Hundi / e-Donate — coming soon placeholder |
-| 5 | `pages/news-events.html` | News & Events | Kumbhabhishekam featured (kumbabishegam-05.jpg), all events Upcoming |
-| 6 | `pages/gallery.html` | Gallery | Tabbed: Photo Gallery, Video Gallery, Past Photos, Albums — fully dynamic from `gallery-data.js` |
-| 7 | `pages/contact.html` | General Information | Addresses, contact form (Google Sheets ready), donation details, map |
+| 5 | `pages/news-events.html` | News & Events | Kumbhabhishekam featured, all events Upcoming |
+| 6 | `pages/gallery.html` | Gallery | Tabbed: Photo Gallery, Video Gallery, Past Photos, Albums — dynamic from `gallery-data.js` |
+| 7 | `pages/contact.html` | General Information | Address, contact form → Google Sheets, donation details, map |
 
-### Legacy Pages (accessible by URL, not in nav)
+---
 
-| File | Description |
-|------|-------------|
-| `pages/photo-gallery.html` | Standalone Photo Gallery (legacy) |
-| `pages/video-gallery.html` | Standalone Video Gallery (legacy) |
+## Core Files
 
-## Core Assets
+| File | Purpose |
+|------|---------|
+| `css/styles.css` | All styles — grid, flexbox, responsive at 1024/768/480px, cross-browser |
+| `js/main.js` | Nav, slider, contact form (Google Sheets wired), visitor counter, scroll animations |
+| `js/gallery.js` | Dynamic gallery renderer — skeletons, filters, lightbox, YouTube + local video modal |
+| `gallery-data.js` | **Admin edits this** to add photos/videos/albums. No coding needed. |
+| `FEATURE-SPEC.md` | Full spec for all pending features (e-Seva, e-Hundi, Login, POS, Domain) |
+| `ADMIN-SETUP-GUIDE.md` | Step-by-step guide for temple admin to set up Google, Firebase, Razorpay accounts |
 
-| File/Folder | Purpose |
-|-------------|---------|
-| `css/styles.css` | ~1,400 lines — CSS variables, grid, flexbox, responsive at 1024/768/480px, cross-browser prefixes |
-| `js/main.js` | Mobile nav + overlay, sticky header, sub-nav scroll, back-to-top, contact form, visitor counter, scroll animations |
-| `js/gallery.js` | Dynamic gallery renderer — skeletons, filters, lightbox, touch swipe, YouTube + local video modal |
-| `gallery-data.js` | **Admin edits this** to add photos/videos/albums. No HTML knowledge required. |
-| `ssmt-logo.jpg` | Temple logo |
-| `images/` | All temple photos |
-| `images/gallery/` | Gallery photos organised by category subfolder |
-| `images/videos/` | Local video files (.mov) |
+---
 
-## Gallery Folder Structure
+## Completed Items ✅
 
-```
-images/
-  gallery/
-    construction/    construction-01.jpg → construction-04.jpg
-    architecture/    architecture-01.jpg → architecture-06.jpg
-    campus/          campus-01.jpg → campus-06.jpg  (drone/aerial shots)
-    past/            past-01.jpg → past-04.jpg  (historical photos)
-    ceremony/        (empty — add ceremony photos here)
-  videos/
-    temple-exterior-walkthrough.mov
-    temple-interior-walkthrough.mov
-```
+- [x] 7-page responsive website built and live
+- [x] Custom domain `www.srisamayapurammariammanspatna.org` — registered on Hostinger, HTTPS enabled
+- [x] GitHub repository — github.com/arunprab/ssmt (public)
+- [x] All pages deployed via GitHub Pages
+- [x] Real temple photos replacing all placeholders
+- [x] Dynamic gallery — 16 photos, 2 local videos, 4 albums, 4 past photos
+- [x] Temple milestone timelines — 9 real milestones (Apr 2012 → Dec 2022)
+- [x] Contact form → Google Sheets (`SSMT - Website Enquiries`) via Apps Script
+- [x] Google Analytics 4 — Measurement ID: `G-4PE1KKZZJ2` (temple account)
+- [x] Visitor counter in footer (CounterAPI — free)
+- [x] Email unified to `samayapuramtemple.spatna@gmail.com` across all pages
+- [x] Goddess name corrected to "Samayapuram MahaMariamman" everywhere
+- [x] Banner/hero titles made white and legible over background images
+- [x] Logo enlarged — 130px header, 80px footer
+- [x] Paragraph text justified throughout
+- [x] Cross-browser compatibility (Chrome, Firefox, Safari, Edge — desktop + mobile)
+- [x] Mobile responsive — hamburger nav, touch swipe, iOS zoom fix
 
-## How to Add Gallery Content
+---
 
-**Add a photo** — drop file in folder, then add one line to `gallery-data.js`:
+## Pending Items
+
+### Ready to implement (waiting for credentials)
+- [ ] **e-Hundi — Online Donations** → needs Razorpay Key ID (`rzp_live_...`) after KYC approval
+- [ ] **e-Seva — Seva Booking Phase 1** → needs approved seva catalogue + Razorpay account
+- [ ] **Devotee Login** → needs Firebase project config block (7 values)
+
+### Admin actions needed
+- [ ] **YouTube** — upload `temple-exterior-walkthrough.mov` + `temple-interior-walkthrough.mov`, share Video IDs → update `gallery-data.js`
+- [ ] **Google Business Profile** — claim/verify temple on Google Maps (business.google.com)
+- [ ] **Gallery captions** — review photos in `images/gallery/` and update captions in `gallery-data.js`
+- [ ] **Ceremony photos** — add to `images/gallery/ceremony/` and update `gallery-data.js`
+- [ ] **Kumbhabhishekam date** — update in `pages/news-events.html` and `pages/temple-structure.html` once confirmed
+
+### Future features (see FEATURE-SPEC.md for full details)
+- [ ] e-Seva Phase 2 — with Razorpay payment
+- [ ] Devotee login + profile page (Firebase Auth)
+- [ ] Temple POS — counter collections, receipt printing
+- [ ] Seva booking Google Sheet (`SSMT - Seva Bookings`) — follow same Apps Script steps as contact form
+
+---
+
+## Gallery — How to Add Content
+
+**Add a photo** — drop file in `images/gallery/<category>/` then add one line to `gallery-data.js`:
 ```js
-{ file: 'construction/IMG001.jpg', caption: 'Foundation work', category: 'construction', date: '2026-04' },
+{ file: 'construction/photo.jpg', caption: 'Description', category: 'construction', date: '2026-05' },
 ```
 
 **Add a YouTube video:**
 ```js
-{ embedId: 'YOUTUBE_VIDEO_ID', title: 'Temple Tour', category: 'architecture', duration: '5:30', date: '2026-04' },
+{ embedId: 'YOUTUBE_VIDEO_ID', title: 'Video Title', category: 'architecture', duration: '5:30', date: '2026-05' },
 ```
 
-**Add a local video (.mov/.mp4):**
+**Add a local video (.mov/.mp4)** — drop in `images/videos/` then:
 ```js
-{ localFile: 'my-video.mov', title: 'Temple Walkthrough', category: 'architecture', date: '2026-04' },
+{ localFile: 'filename.mov', title: 'Video Title', category: 'architecture', date: '2026-05' },
 ```
 
-**Add an album** — add to `albums: [ ]` and `past: [ ]` sections in `gallery-data.js`.
+---
 
-## Image Files
+## Key Credentials & IDs
 
-All images are local (no Unsplash URLs).
+| Service | Value | Account |
+|---------|-------|---------|
+| Google Analytics 4 | `G-4PE1KKZZJ2` | samayapuramtemple.spatna@gmail.com |
+| Google Sheets (Contact) | Apps Script URL in `js/main.js` | samayapuramtemple.spatna@gmail.com |
+| GitHub | github.com/arunprab/ssmt | arunprab |
+| Domain registrar | Hostinger | — |
+| Razorpay | Pending KYC | samayapuramtemple.spatna@gmail.com |
+| Firebase | Not yet created | samayapuramtemple.spatna@gmail.com |
 
-| File | Used On |
-|------|---------|
-| `hero-1.jpg`, `hero-2.jpg`, `hero-3.jpg` | Home slider |
-| `temple-front.jpg` | Home welcome, Gallery banner |
-| `goddess-deity.jpg` | Home goddess section, Goddess page (banner + intro) |
-| `guru-swamiji.jpg` | Goddess page guru section |
-| `gopuram-main.jpg` | Temple page (banner + Agama Shastra) |
-| `pillar-carving.jpg` | Temple page structure, News card |
-| `maha-mandapam.jpg` | Temple page Mandapam section |
-| `construction-progress.jpg` | Temple page structure, News card |
-| `kumbabishegam-05.jpg` | News page featured Kumbhabhishekam event |
-| `pooja-ceremony.jpg` | News page banner, e-Seva banner |
-| `campus-aerial.jpg` | News card, Contact page banner |
-| `gallery-1.jpg` to `gallery-6.jpg` | Home gallery scroll |
-| `structure-1.jpg` to `structure-7.jpg` | Temple Structure page scroll |
-
-## Key Design Decisions
-
-- **About the Goddess page**: Ashtabhuja content merged into Goddess intro block. Guru section has two quotes sandwiching bio text. Banner `background-position: center 25%` to show goddess face.
-- **Temple Structure page**: Vision & Mission first, then Agama Shastra. Structure section uses horizontal photo scroll (7 slots) + 2-column text card grid. Campus Facilities removed.
-- **Temple Timelines**: 9 real milestones (Apr 2012 → Dec 2022) + Kumbhabhishekam 2026 (Upcoming). Compact single-line layout with status badge on right.
-- **Home page**: Campus Facilities removed. `<marquee>` replaced with CSS keyframe animation.
-- **Gallery page**: Fully dynamic — zero hardcoded items. Powered by `gallery-data.js` + `gallery.js`. Supports YouTube embeds and local .mov/.mp4 playback.
-- **Email**: Single contact email `samayapuramtemple.spatna@gmail.com` used across all pages.
-- **Visitor Counter**: CounterAPI (free) — counts once per browser session, shown in footer of all pages.
-- **Google Analytics**: GA4 placeholder (`G-XXXXXXXXXX`) added to all pages — replace with real ID when account is set up.
-
-## Pending Items
-
-- [ ] **Contact form → Google Sheets integration** (placeholder ready in `js/main.js`):
-  1. Create Google Sheet: columns `timestamp, name, email, phone, subject, message`
-  2. Open Apps Script → paste doPost script → Deploy as web app
-  3. Copy web app URL into `GOOGLE_SCRIPT_URL` in `js/main.js`
-- [ ] Replace `G-XXXXXXXXXX` in all 9 HTML files with real GA4 Measurement ID
-- [x] Domain `www.srisamayapurammariammanspatna.org` — registered and live
-- [ ] Update Kumbhabhishekam event dates when confirmed
-- [ ] Build e-Seva/e-Hundi/e-Donate functionality (currently placeholder)
-- [ ] Add ceremony photos to `images/gallery/ceremony/` and update `gallery-data.js`
-- [ ] Update gallery photo captions in `gallery-data.js` after reviewing actual images
-- [ ] Deploy to GitHub Pages (repo: github.com/arunprab/ssmt)
+---
 
 ## Tech Stack
 
-HTML5, CSS3 (custom properties, grid, flexbox), vanilla JS, Font Awesome 6.5, Google Fonts (Playfair Display + Poppins). No build tools or dependencies.
+HTML5, CSS3 (custom properties, grid, flexbox), vanilla JS, Font Awesome 6.5, Google Fonts (Playfair Display + Poppins). No build tools, no frameworks, no dependencies.
 
-## Cross-Browser Support
+---
 
-Chrome, Firefox, Safari, Edge (desktop + mobile).
-Key fixes: `-webkit-sticky`, `-webkit-overflow-scrolling: touch`, CSS keyframe ticker, `IntersectionObserver` guard, `scrollTo` try/catch.
+## Git Push Command
 
-## How to Continue in a New Chat
-
-Paste this at the start:
-
-> Referring to the SSMT temple website at `/Users/arunp/Documents/claude-projects/ssmt/` (GitHub: github.com/arunprab/ssmt, Live: https://www.srisamayapurammariammanspatna.org), I want to...
+Always use Homebrew git to push (avoids macOS SSL issues):
+```
+/opt/homebrew/bin/git push origin main
+```
