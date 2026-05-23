@@ -392,12 +392,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
 /* ============================================
    Goddess Section (Home)
    ============================================ */
-.goddess-section { position: relative; background: var(--secondary); color: var(--white); overflow: hidden; }
-.goddess-bg {
-    position: absolute; inset: 0;
-    background: url('../images/goddess-deity.jpg') center/cover;
-    opacity: 0.15;
-}
+.goddess-section { position: relative; background: var(--bg-alt); overflow: hidden; }
+.goddess-bg { display: none; }
 .goddess-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -406,8 +402,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
     position: relative;
     z-index: 1;
 }
-.goddess-text h2 { color: var(--accent); }
-.goddess-text p { color: rgba(255,255,255,0.9); margin-bottom: 1rem; }
+.goddess-text h2 { color: var(--secondary); }
+.goddess-text p { color: var(--text); margin-bottom: 1rem; }
 .goddess-image img { border-radius: var(--radius); box-shadow: var(--shadow-lg); }
 
 /* ============================================
@@ -611,7 +607,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
    Page Banner (Inner Pages)
    ============================================ */
 .page-banner {
-    height: 350px;
+    height: 180px;
+    background: linear-gradient(135deg, var(--secondary), #a00);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -627,7 +624,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
     position: relative; z-index: 1;
     text-align: center; color: var(--white);
 }
-.banner-content h2 { font-size: 2rem; margin-bottom: 8px; color: var(--white); text-shadow: 2px 2px 8px rgba(0,0,0,0.6); }
+.banner-content h2 { font-size: 2rem; margin-bottom: 8px; color: var(--white); }
 .breadcrumb { font-size: 0.95rem; }
 .breadcrumb a { color: var(--accent); }
 .breadcrumb i { font-size: 0.7rem; margin: 0 8px; }

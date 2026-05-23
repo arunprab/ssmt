@@ -79,6 +79,13 @@ Paste this at the start of any new session:
 - [ ] **Ceremony photos** — add to `images/gallery/ceremony/` and update `gallery-data.js`
 - [ ] **Kumbhabhishekam date** — update in `pages/news-events.html` and `pages/temple-structure.html` once confirmed
 
+### Media hosting migration (Google Drive)
+- [ ] **Move photos to Google Drive** — upload all gallery photos to temple Google Drive account (samayapuramtemple.spatna@gmail.com), keeps GitHub repo small
+- [ ] **Move videos to YouTube (Unlisted)** — better playback, no bandwidth limits, share Video IDs to update `gallery-data.js`
+- [ ] **Update gallery-data.js** — replace local file paths with Google Drive direct URLs (`https://drive.google.com/uc?export=view&id=FILE_ID`)
+- [ ] **How to get Drive file ID** — right-click file in Drive → Share → Copy link → extract the ID between `/d/` and `/view`
+- [ ] **Note** — folder structure stays private on Drive; only individual file IDs appear in page source, not browsable by public
+
 ### Future features (see FEATURE-SPEC.md for full details)
 - [ ] e-Seva Phase 2 — with Razorpay payment
 - [ ] Devotee login + profile page (Firebase Auth)
