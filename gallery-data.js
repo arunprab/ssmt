@@ -53,18 +53,18 @@ var GALLERY_DATA = {
   /* ── VIDEOS ────────────────────────────────────── */
   videos: [
     {
-      localFile: 'temple-exterior-walkthrough.mov',
-      title:     'Temple Exterior Walkthrough',
-      category:  'architecture',
-      duration:  '',
-      date:      '2024'
+      embedId:  'dLDfXCSSvaQ',
+      title:    'Temple Exterior Walkthrough',
+      category: 'architecture',
+      duration: '',
+      date:     '2024'
     },
     {
-      localFile: 'temple-interior-walkthrough.mov',
-      title:     'Temple Interior Walkthrough',
-      category:  'architecture',
-      duration:  '',
-      date:      '2024'
+      embedId:  'Xfwp5T-CfPw',
+      title:    'Temple Interior Walkthrough',
+      category: 'architecture',
+      duration: '',
+      date:     '2024'
     },
   ],
 
