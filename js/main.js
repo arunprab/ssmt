@@ -298,6 +298,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Home Strip — build from gallery-data.js homeStrip array
+    const homeStripTrack = document.getElementById('homeStripTrack');
+    if (homeStripTrack && window.GALLERY_DATA && GALLERY_DATA.homeStrip) {
+        const photos = GALLERY_DATA.homeStrip;
+        const doubled = [...photos, ...photos]; // duplicate for seamless infinite loop
+        homeStripTrack.innerHTML = doubled.map(f =>
+            `<div class="auto-gallery-item"><img src="images/gallery/${f}" alt="Temple Photo" loading="eager"></div>`
+        ).join('');
+    }
+
     // Scroll Animations (guarded for older browsers)
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver(entries => {

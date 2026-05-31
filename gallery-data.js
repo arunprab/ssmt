@@ -100,6 +100,26 @@ var GALLERY_DATA = {
     },
   ],
 
+  /* ── HOME PAGE STRIP ──────────────────────────────
+   *  These photos scroll automatically on the home page.
+   *  To update:
+   *    1. Drop your photo into  images/gallery/<any-subfolder>/
+   *    2. Add the filename below as  'subfolder/filename.jpg'
+   *    3. To remove a photo, delete its line.
+   *  ─────────────────────────────────────────────── */
+  homeStrip: [
+    'architecture/architecture-01.jpg',
+    'architecture/architecture-02.jpg',
+    'architecture/architecture-03.jpg',
+    'architecture/architecture-04.jpg',
+    'architecture/architecture-05.jpg',
+    'architecture/architecture-06.jpg',
+    'campus/campus-01.jpg',
+    'campus/campus-02.jpg',
+    'campus/campus-03.jpg',
+    'campus/campus-04.jpg',
+  ],
+
   /* ── PAST PHOTOS ───────────────────────────────── */
   past: [
     { file: 'past/past-01.jpg', caption: 'Early Temple Days',           year: '2012', category: 'campus'       },

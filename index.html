@@ -55,54 +55,23 @@
         </nav>
     </header>
 
-    <!-- Hero Section with Slider -->
-    <section class="hero-slider" id="heroSlider">
-        <div class="slide active" style="background-image: url('images/hero-1.jpg'); background-position: top center;">
-            <div class="slide-overlay"></div>
-            <div class="slide-content">
-                <div class="om-symbol">ॐ</div>
-                <h2>Sri Samayapuram MahaMariamman Devasthanam</h2>
-                <p>A Divine Abode of the Goddess on the Sacred Banks of River Cauvery</p>
-                <a href="pages/temple-structure.html" class="btn btn-primary">Explore the Temple</a>
-            </div>
-        </div>
-        <div class="slide" style="background-image: url('images/hero-2.jpg')">
-            <div class="slide-overlay"></div>
-            <div class="slide-content">
-                <div class="om-symbol">ॐ</div>
-                <h2>Dravidian Architecture at its Finest</h2>
-                <p>108 ft Raja Gopuram · 3 Pragarams · 5 Gopurams · 70,000 sq. ft.</p>
-                <a href="pages/temple-structure.html" class="btn btn-primary">View Architecture</a>
-            </div>
-        </div>
-        <div class="slide" style="background-image: url('images/hero-3.jpg')">
-            <div class="slide-overlay"></div>
-            <div class="slide-content">
-                <div class="om-symbol">ॐ</div>
-                <h2>Kumbhabhishekam Coming Soon</h2>
-                <p>Join us for the grand consecration ceremony of this sacred temple</p>
-                <a href="pages/news-events.html" class="btn btn-primary">View Events</a>
-            </div>
-        </div>
-        <div class="slider-controls">
-            <button class="slider-btn prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
-            <button class="slider-btn next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
-        </div>
-        <div class="slider-dots"></div>
-    </section>
-
     <!-- Marquee / Scrolling Updates -->
     <div class="news-ticker">
         <div class="container">
             <span class="ticker-label"><i class="fas fa-bell"></i> Latest Updates</span>
             <div class="ticker-content">
                 <div class="ticker-track">
-                    <span class="ticker-text">🔔 Kumbhabhishekam ceremony dates to be announced soon! &nbsp;&nbsp;|&nbsp;&nbsp; 🪔 Daily Poojas: Morning 6:00 AM - 12:00 PM, Evening 4:00 PM - 8:00 PM &nbsp;&nbsp;|&nbsp;&nbsp; 🙏 Temple construction Phase 1 nearing completion &nbsp;&nbsp;|&nbsp;&nbsp; 📞 For donations and inquiries: +91 97911 67265 &nbsp;&nbsp;|&nbsp;&nbsp; 🕉️ Visit us at Baburayanakoppalu, Srirangapatna, Mandya District</span>
-                    <span class="ticker-text">🔔 Kumbhabhishekam ceremony dates to be announced soon! &nbsp;&nbsp;|&nbsp;&nbsp; 🪔 Daily Poojas: Morning 6:00 AM - 12:00 PM, Evening 4:00 PM - 8:00 PM &nbsp;&nbsp;|&nbsp;&nbsp; 🙏 Temple construction Phase 1 nearing completion &nbsp;&nbsp;|&nbsp;&nbsp; 📞 For donations and inquiries: +91 97911 67265 &nbsp;&nbsp;|&nbsp;&nbsp; 🕉️ Visit us at Baburayanakoppalu, Srirangapatna, Mandya District</span>
+                    <span class="ticker-text">🔔 Maha Kumbhabhishekam — 18th to 25th June 2026! Join us for this grand historic event! &nbsp;&nbsp;|&nbsp;&nbsp; 🪔 Daily Poojas: Morning 6:00 AM - 12:00 PM, Evening 4:00 PM - 8:00 PM &nbsp;&nbsp;|&nbsp;&nbsp; 🙏 Temple construction Phase 1 nearing completion &nbsp;&nbsp;|&nbsp;&nbsp; 📞 For donations and inquiries: +91 97911 67265 &nbsp;&nbsp;|&nbsp;&nbsp; 🕉️ Visit us at Baburayanakoppalu, Srirangapatna, Mandya District</span>
+                    <span class="ticker-text">🔔 Maha Kumbhabhishekam — 18th to 25th June 2026! Join us for this grand historic event! &nbsp;&nbsp;|&nbsp;&nbsp; 🪔 Daily Poojas: Morning 6:00 AM - 12:00 PM, Evening 4:00 PM - 8:00 PM &nbsp;&nbsp;|&nbsp;&nbsp; 🙏 Temple construction Phase 1 nearing completion &nbsp;&nbsp;|&nbsp;&nbsp; 📞 For donations and inquiries: +91 97911 67265 &nbsp;&nbsp;|&nbsp;&nbsp; 🕉️ Visit us at Baburayanakoppalu, Srirangapatna, Mandya District</span>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Auto-Scrolling Gallery Strip (photos managed via gallery-data.js → homeStrip) -->
+    <section class="auto-gallery-strip">
+        <div class="auto-gallery-track" id="homeStripTrack"></div>
+    </section>
 
     <!-- Welcome Section -->
     <section class="section welcome-section">
@@ -136,13 +105,8 @@
             </div>
             <div class="highlights-grid">
                 <div class="highlight-card">
-                    <div class="highlight-icon"><i class="fas fa-gopuram"></i></div>
-                    <h3>108 ft</h3>
-                    <p>Raja Gopuram<br><small>9 Stories — Tallest in the vicinity</small></p>
-                </div>
-                <div class="highlight-card">
                     <div class="highlight-icon"><i class="fas fa-landmark"></i></div>
-                    <h3>70,000 sq.ft</h3>
+                    <h3>40,000 sq.ft</h3>
                     <p>Temple Complex<br><small>Spread across 3½ acres</small></p>
                 </div>
                 <div class="highlight-card">
@@ -154,16 +118,6 @@
                     <div class="highlight-icon"><i class="fas fa-columns"></i></div>
                     <h3>38 Pillars</h3>
                     <p>Carved Stone Pillars<br><small>With Goddess engravings</small></p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon"><i class="fas fa-om"></i></div>
-                    <h3>3 Pragarams</h3>
-                    <p>Temple Sections<br><small>Inner, Middle & Outer</small></p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon"><i class="fas fa-mountain"></i></div>
-                    <h3>350 ft</h3>
-                    <p>Total Height<br><small>Dravidian Style Architecture</small></p>
                 </div>
             </div>
         </div>
@@ -207,12 +161,12 @@
                 <div class="location-card">
                     <i class="fas fa-water"></i>
                     <h3>Confluence of Sacred Rivers</h3>
-                    <p>Located at the confluence of river Cauvery and LokPavani — one of the seven sacred rivers in Indian heritage.</p>
+                    <p>Located at the confluence of river Cauvery and LokaPavani — one of the seven sacred rivers in Indian heritage.</p>
                 </div>
                 <div class="location-card">
                     <i class="fas fa-star"></i>
                     <h3>Auspicious Aura</h3>
-                    <p>Nimisha Ambika temple across the Cauvery and Kashi Vishwanath temple in the South-West lend an omnipotent aura.</p>
+                    <p>Nimisha Ambika temple across the Cauvery and Kashi Vishwanath temple in the West lend an amnipotent aura.</p>
                 </div>
                 <div class="location-card">
                     <i class="fas fa-leaf"></i>
@@ -327,6 +281,7 @@
     <!-- Back to Top -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
 
+    <script src="gallery-data.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

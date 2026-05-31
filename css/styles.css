@@ -125,13 +125,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
 .logo {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     color: var(--secondary);
-    padding: 16px 0 10px;
+    padding: 8px 0 6px;
 }
 .logo img {
-    width: 130px;
-    height: 130px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
     flex-shrink: 0;
 }
@@ -140,13 +140,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
     flex: 1;
 }
 .logo-text h1 {
-    font-size: 1.55rem;
+    font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: 0.3px;
 }
 .logo .tagline {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     color: var(--text-light);
     font-family: var(--font-body);
     margin-top: 2px;
@@ -209,8 +209,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
    ============================================ */
 .hero-slider {
     position: relative;
-    height: 85vh;
-    min-height: 500px;
+    height: 100vh;
+    min-height: 550px;
     overflow: hidden;
     touch-action: pan-y;
 }
@@ -222,7 +222,14 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
     opacity: 0;
     transition: opacity 1s ease;
 }
-.slide.active { opacity: 1; }
+.slide.active {
+    opacity: 1;
+    animation: kenBurns 6s ease-out forwards;
+}
+@keyframes kenBurns {
+    from { transform: scale(1); }
+    to   { transform: scale(1.08); }
+}
 .slide-overlay {
     position: absolute;
     inset: 0;
@@ -260,12 +267,27 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
 
 .slider-dots {
     position: absolute;
-    bottom: 30px;
+    bottom: 24px;
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 10px;
     z-index: 3;
+}
+.scroll-indicator {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.8);
+    font-size: 1.5rem;
+    z-index: 3;
+    cursor: pointer;
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+@keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0);    opacity: 0.8; }
+    50%       { transform: translateX(-50%) translateY(9px);  opacity: 1;   }
 }
 .slider-dot {
     width: 12px; height: 12px;
@@ -313,6 +335,53 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
 @keyframes ticker-scroll {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+}
+
+/* ============================================
+   Auto-Scrolling Gallery Strip
+   ============================================ */
+.auto-gallery-strip {
+    overflow: hidden;
+    padding: 20px 0;
+    background: #f5ede3;
+}
+.auto-gallery-track {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+    animation: autoScrollLeft 30s linear infinite;
+}
+.auto-gallery-track.reverse {
+    animation-name: autoScrollRight;
+    animation-duration: 36s;
+    margin-top: 12px;
+}
+.auto-gallery-strip:hover .auto-gallery-track {
+    animation-play-state: paused;
+}
+.auto-gallery-item {
+    width: 304px;
+    height: 211px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+}
+.auto-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+}
+.auto-gallery-item:hover img { transform: scale(1.06); }
+@keyframes autoScrollLeft {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+@keyframes autoScrollRight {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
 }
 
 /* ============================================
@@ -1453,11 +1522,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
 
 @media (max-width: 768px) {
     .mobile-toggle { display: flex; }
-    .header-content { position: relative; }
-    .logo { padding: 12px 0 8px; }
-    .logo img { width: 70px; height: 70px; }
-    .logo-text h1 { font-size: 1.1rem; }
-    .logo .tagline { font-size: 0.7rem; }
+    .header-content { position: relative; align-items: flex-start; }
+    .logo { padding: 6px 0 4px; max-width: calc(100% - 64px); }
+    .logo img { width: 55px; height: 55px; }
+    .logo-text h1 { font-size: 0.95rem; }
+    .logo .tagline { font-size: 0.65rem; }
 
     .nav {
         position: fixed;
@@ -1476,7 +1545,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
     .nav ul { flex-direction: column; gap: 0; }
     .nav a { display: block; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.1); }
 
-    .hero-slider { height: 60vh; min-height: 400px; }
+    .hero-slider { height: 85vh; min-height: 420px; }
+    .auto-gallery-item { width: 200px; height: 140px; }
     .slide-content h2 { font-size: 1.5rem; }
     .slide-content p { font-size: 0.9rem; }
     .om-symbol { font-size: 2rem; }
@@ -1530,7 +1600,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
 
 @media (max-width: 480px) {
     .container { padding: 0 12px; }
-    .hero-slider { height: 45vh; min-height: 300px; }
+    .hero-slider { height: 75vh; min-height: 320px; }
+    .auto-gallery-item { width: 160px; height: 115px; }
     .slide-content h2 { font-size: 1.2rem; }
     .btn { padding: 9px 20px; font-size: 0.82rem; }
     .section { padding: 25px 0; }
