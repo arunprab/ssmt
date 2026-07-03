@@ -1106,7 +1106,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
 }
 .news-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
 .news-image { position: relative; }
-.news-image img { width: 100%; height: 200px; object-fit: cover; }
+.news-image img { width: 100%; height: 260px; object-fit: contain; background: var(--bg-alt); display: block; }
 .news-date {
     position: absolute;
     bottom: 10px; left: 10px;
@@ -1479,36 +1479,49 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
 .gallery-tab-content.active { display: block; }
 
 /* ============================================
-   e-Seva Coming Soon Page
+   Online Services Page
    ============================================ */
-.coming-soon-section {
-    min-height: 60vh;
+.online-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+.online-service-card {
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    border: 1.5px solid rgba(139, 90, 43, 0.18);
+    padding: 28px;
+}
+.service-card-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-.coming-soon-content i { font-size: 3rem; color: var(--accent); margin-bottom: 15px; }
-.coming-soon-content h2 { font-size: 1.8rem; margin-bottom: 8px; }
-.coming-soon-content p { max-width: 550px; margin: 0 auto 1rem; color: var(--text-light); }
-.coming-soon-features {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin: 30px 0;
+    gap: 10px;
+    margin-bottom: 14px;
     flex-wrap: wrap;
 }
-.coming-soon-feature {
-    background: var(--white);
-    padding: 25px 30px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    text-align: center;
-    min-width: 180px;
+.service-card-header i { font-size: 1.6rem; color: var(--primary); flex-shrink: 0; }
+.service-card-header h3 { font-size: 1.1rem; margin: 0; flex: 1; }
+.service-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
 }
-.coming-soon-feature i { font-size: 2rem; color: var(--primary); margin-bottom: 10px; display: block; }
-.coming-soon-feature h4 { font-size: 1rem; margin-bottom: 5px; }
-.coming-soon-feature p { font-size: 0.85rem; margin: 0; }
+.service-badge.live { background: #d4edda; color: #155724; }
+.service-badge.soon { background: #fff3cd; color: #856404; }
+.qr-wrapper { display: flex; flex-direction: column; align-items: center; padding: 16px 0 8px; }
+.qr-code-img {
+    width: 180px;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+.upi-label { margin: 10px 0 4px; font-size: 0.95rem; }
+.upi-note { font-size: 0.78rem; color: var(--text-light); max-width: 200px; margin: 0 auto; text-align: center; }
 
 /* ============================================
    Responsive Design
@@ -1518,6 +1531,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
     .campus-grid { grid-template-columns: repeat(3, 1fr); }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .gopuram-grid { grid-template-columns: repeat(3, 1fr); }
+    .online-services-grid { grid-template-columns: 1fr; }
+    .qr-code-img { width: 200px; }
 }
 
 @media (max-width: 768px) {
@@ -1626,8 +1641,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
     .sub-nav-link { padding: 8px 10px; font-size: 0.75rem; }
     .sub-nav-link i { display: none; }
 
-    .coming-soon-content h2 { font-size: 1.5rem; }
-    .coming-soon-content i { font-size: 2.5rem; }
+    .qr-code-img { width: 220px; }
 
     /* Prevent iOS Safari zoom on form focus (needs 16px minimum) */
     .form-group input,

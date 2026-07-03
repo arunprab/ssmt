@@ -52,17 +52,48 @@ var GALLERY_DATA = {
 
   /* ── VIDEOS ────────────────────────────────────── */
   videos: [
+    /* Kumbhabhishekam — Sankara TV Coverage */
+    {
+      embedId:  'flyqideyVyk',
+      title:    'Sankara TV — Kumbhabhishekam Day 1 Program',
+      category: 'kumbhabhishekam',
+      duration: '',
+      date:     '2026-06'
+    },
+    {
+      embedId:  'uP7Gd463FaE',
+      title:    'Sankara TV — Kumbhabhishekam Day 2 Program',
+      category: 'kumbhabhishekam',
+      duration: '',
+      date:     '2026-06'
+    },
+    {
+      embedId:  'N1oHtqvChtQ',
+      title:    'Sankara TV — Kumbhabhishekam Day 3 Program',
+      category: 'kumbhabhishekam',
+      duration: '',
+      date:     '2026-06'
+    },
+    {
+      embedId:  'TTXboWzRI2Y',
+      title:    'Sankara TV — Final Day Live (25th June 2026)',
+      category: 'kumbhabhishekam',
+      duration: '',
+      date:     '2026-06'
+    },
+
+    /* Temple Walkthroughs */
     {
       embedId:  'dLDfXCSSvaQ',
       title:    'Temple Exterior Walkthrough',
-      category: 'architecture',
+      category: 'walkthrough',
       duration: '',
       date:     '2024'
     },
     {
       embedId:  'Xfwp5T-CfPw',
       title:    'Temple Interior Walkthrough',
-      category: 'architecture',
+      category: 'walkthrough',
       duration: '',
       date:     '2024'
     },

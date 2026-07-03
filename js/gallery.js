@@ -101,11 +101,15 @@
     }
 
     grid.innerHTML = videos.map(function (v) {
-      // Thumbnail: explicit thumbnail > gopuram fallback
+      // Thumbnail: explicit > YouTube auto-thumbnail > fallback
       var thumb = v.thumbnail
         ? '../images/videos/' + v.thumbnail
-        : '../images/gopuram-main.jpg';
-      var typeLabel = v.localFile ? '<span class="video-type-badge"><i class="fas fa-film"></i> Local</span>' : '';
+        : (v.embedId
+            ? 'https://img.youtube.com/vi/' + v.embedId + '/hqdefault.jpg'
+            : '../images/gopuram-main.jpg');
+      var typeLabel = v.localFile
+        ? '<span class="video-type-badge"><i class="fas fa-film"></i> Local</span>'
+        : (v.embedId ? '<span class="video-type-badge"><i class="fab fa-youtube"></i> YouTube</span>' : '');
       return (
         '<div class="video-card" data-category="' + (v.category || '') + '" data-date="' + (v.date || '') + '">' +
           '<div class="video-thumb">' +
@@ -225,11 +229,9 @@
       card.addEventListener('click', function () {
         var video = videos[i];
         if (video && video.embedId) {
-          // YouTube embed
-          modalContent.innerHTML =
-            '<button class="video-modal-close" aria-label="Close"><i class="fas fa-times"></i></button>' +
-            '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + video.embedId + '?autoplay=1" ' +
-            'frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius:8px;min-height:400px"></iframe>';
+          // Open on YouTube directly (avoids embed restrictions)
+          window.open('https://www.youtube.com/watch?v=' + video.embedId, '_blank', 'noopener,noreferrer');
+          return;
         } else if (video && video.localFile) {
           // Local video file (.mov / .mp4)
           var src = '../images/videos/' + video.localFile;
