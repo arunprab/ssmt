@@ -205,6 +205,8 @@
             var match = filter === 'all' || card.dataset.category === filter;
             if (match) {
               card.style.display = '';
+              card.style.opacity = '';
+              card.style.transform = '';
               setTimeout(function () { card.classList.add('visible'); }, 10);
             } else {
               card.style.opacity = '0';
