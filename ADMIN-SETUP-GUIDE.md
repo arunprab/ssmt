@@ -167,7 +167,7 @@ const firebaseConfig = {
    - Business name: `Sri Samayapuram Mahamariamman Devasthanam`
    - Category: `Hindu Temple`
    - Address: `No.163 & 166, Kirangur Post, Baburayanakoppalu, Srirangapatna, Mandya District – 571807`
-   - Phone: `+91 97911 67265`
+   - Phone: `+91 94482 70779`
    - Website: `https://www.srisamayapurammariammanspatna.org`
    - Hours: Add temple timings
 7. Verify ownership — Google will offer options:

@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = Object.fromEntries(new FormData(contactForm));
 
             if (!GOOGLE_SCRIPT_URL) {
-                alert('Thank you for your message! 🙏\n\n(Form backend not yet configured — please contact us directly at +91 97911 67265)');
+                alert('Thank you for your message! 🙏\n\n(Form backend not yet configured — please contact us directly at +91 94482 70779)');
                 contactForm.reset();
                 return;
             }
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 contactForm.reset();
             })
             .catch(() => {
-                alert('Something went wrong. Please try again or contact us at +91 97911 67265.');
+                alert('Something went wrong. Please try again or contact us at +91 94482 70779.');
             })
             .finally(() => {
                 btn.disabled = false;
