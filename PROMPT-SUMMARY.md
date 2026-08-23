@@ -4,7 +4,7 @@
 **GitHub:** https://github.com/arunprab/ssmt
 **Live URL:** https://www.srisamayapurammariammanspatna.org
 **Local Path:** `/Users/arunp/Documents/claude-projects/ssmt/`
-**Last Updated:** May 2026
+**Last Updated:** August 2026
 
 ---
 
@@ -50,7 +50,7 @@ Paste this at the start of any new session:
 - [x] GitHub repository — github.com/arunprab/ssmt (public)
 - [x] All pages deployed via GitHub Pages
 - [x] Real temple photos replacing all placeholders
-- [x] Dynamic gallery — 16 photos, 2 YouTube videos, 4 albums, 4 past photos
+- [x] Dynamic gallery — 42 photos, 6 YouTube videos, 5 albums, 4 past photos
 - [x] Temple milestone timelines — 9 real milestones (Apr 2012 → Dec 2022) + Kumbhabhishekam 25 Jun 2026
 - [x] Contact form → Google Sheets (`SSMT - Website Enquiries`) via Apps Script
 - [x] Google Analytics 4 — Measurement ID: `G-4PE1KKZZJ2` (temple account)
@@ -68,6 +68,11 @@ Paste this at the start of any new session:
 - [x] **Temple Highlights corrected** — removed 108ft Raja Gopuram and 3 Pragarams cards; area updated to 40,000 sq.ft
 - [x] **River name fixed** — LokPavani → LokaPavani throughout
 - [x] **Direction fixed** — Kashi Vishwanath temple: South-West → West; omnipotent → amnipotent
+- [x] **Post-Kumbhabhishekam photo refresh (Aug 2026)** — 24 new photos added: new `images/gallery/ceremony/` category (13 Kumbhabhishekam ritual photos), 11 new architecture shots (entrance arch, gopuram, dwajastambham, sanctum door), 2 new construction shots; 3 misfiled campus drone shots recategorised to `construction/`
+- [x] **New "Maha Kumbhabhishekam 2026" album** — 13 ceremony photos, cover `ceremony/ceremony-07.jpg`
+- [x] **Album click-to-filter** — clicking an album card in the Albums tab now switches to Photo Gallery (or Past Photos) and filters to just that album's photos, with a "Show All Photos" clear banner; implemented via `album` field on photo/past entries + event delegation in `js/gallery.js`
+- [x] **Home page photo strip refreshed** — now features post-Kumbhabhishekam shots (gopuram, dwajastambham, kalasams, procession)
+- [x] **Cache-busting on gallery assets** — `gallery-data.js`, `js/gallery.js`, `js/main.js`, `css/styles.css` now carry a `?v=` query string on `index.html` and `pages/gallery.html` so edits show up without a hard refresh; bump the version string whenever those files change
 
 ---
 
@@ -81,9 +86,6 @@ Paste this at the start of any new session:
 ### Admin actions needed
 - [ ] **YouTube** — upload `temple-exterior-walkthrough.mov` + `temple-interior-walkthrough.mov`, share Video IDs → update `gallery-data.js`
 - [ ] **Google Business Profile** — claim/verify temple on Google Maps (business.google.com)
-- [ ] **Gallery captions** — review photos in `images/gallery/` and update captions in `gallery-data.js`
-- [ ] **Ceremony photos** — add to `images/gallery/ceremony/` and update `gallery-data.js`
-- [ ] **Home strip photos** — add preferred photos to `gallery-data.js → homeStrip[]`; drop files in any `images/gallery/<subfolder>/`
 
 ### Future features (see FEATURE-SPEC.md for full details)
 - [ ] e-Seva Phase 2 — with Razorpay payment
@@ -98,8 +100,8 @@ The auto-scrolling strip on the home page is controlled entirely from `gallery-d
 
 ```js
 homeStrip: [
-  'architecture/architecture-01.jpg',  // path relative to images/gallery/
-  'campus/campus-01.jpg',
+  'architecture/architecture-14.jpg',  // path relative to images/gallery/
+  'ceremony/ceremony-01.jpg',
   'key-updates/new-photo.jpg',         // drop file in images/gallery/key-updates/ first
 ],
 ```
@@ -117,6 +119,7 @@ homeStrip: [
 ```js
 { file: 'construction/photo.jpg', caption: 'Description', category: 'construction', date: '2026-05' },
 ```
+Optional: add `album: 'album-id'` (matching an id in the `albums` array) to group it into an album — clicking that album in the Albums tab filters the Photo Gallery (or Past Photos, if the album has `type: 'past'`) down to just its tagged photos.
 
 **Add a YouTube video:**
 ```js

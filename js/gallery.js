@@ -72,7 +72,7 @@
 
     grid.innerHTML = photos.map(function (p, i) {
       return (
-        '<div class="gallery-card" data-category="' + p.category + '" data-date="' + p.date + '">' +
+        '<div class="gallery-card" data-category="' + p.category + '" data-date="' + p.date + '" data-album="' + (p.album || '') + '">' +
           '<div class="gallery-thumb">' +
             '<img src="' + IMG_BASE + p.file + '" alt="' + p.caption + '" loading="lazy" onerror="this.parentElement.parentElement.style.display=\'none\'">' +
             '<div class="gallery-overlay">' +
@@ -143,7 +143,7 @@
 
     grid.innerHTML = past.map(function (p) {
       return (
-        '<div class="gallery-card" data-category="' + p.category + '">' +
+        '<div class="gallery-card" data-category="' + p.category + '" data-album="' + (p.album || '') + '">' +
           '<div class="gallery-thumb">' +
             '<img src="' + IMG_BASE + p.file + '" alt="' + p.caption + '" loading="lazy" onerror="this.parentElement.parentElement.style.display=\'none\'">' +
             '<div class="gallery-overlay"><button class="gallery-zoom" aria-label="View full size"><i class="fas fa-search-plus"></i></button></div>' +
@@ -170,7 +170,7 @@
     grid.innerHTML = albums.map(function (a) {
       var cover = a.cover ? IMG_BASE + a.cover : '../images/gopuram-main.jpg';
       return (
-        '<div class="news-card album-card">' +
+        '<div class="news-card album-card" data-album-id="' + a.id + '" tabindex="0" role="button" aria-label="View ' + a.name + ' album">' +
           '<div class="news-image">' +
             '<img src="' + cover + '" alt="' + a.name + '" loading="lazy" onerror="this.src=\'../images/gopuram-main.jpg\'">' +
             '<span class="news-date">' + a.year + '</span>' +
@@ -184,6 +184,76 @@
     }).join('');
 
     animateIn(grid.querySelectorAll('.album-card'));
+    setupAlbumLinks(albums);
+  }
+
+  /* ── Album → filtered photo view ────────── */
+
+  function setupAlbumLinks(albums) {
+    var grid = document.getElementById('albumsGrid');
+    if (!grid || grid.dataset.albumLinksBound) return;
+    grid.dataset.albumLinksBound = 'true';
+
+    // Event delegation: survives re-renders and doesn't rely on card order.
+    grid.addEventListener('click', function (e) {
+      var card = e.target.closest('.album-card');
+      if (!card) return;
+      var album = albums.filter(function (a) { return a.id === card.dataset.albumId; })[0];
+      if (album) openAlbum(album);
+    });
+
+    grid.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var card = e.target.closest('.album-card');
+      if (!card) return;
+      e.preventDefault();
+      var album = albums.filter(function (a) { return a.id === card.dataset.albumId; })[0];
+      if (album) openAlbum(album);
+    });
+  }
+
+  function openAlbum(album) {
+    var tabId = album.type === 'past' ? 'past' : 'photos';
+    var tabBtn = document.querySelector('.gallery-tab[data-tab="' + tabId + '"]');
+    if (tabBtn) tabBtn.click();
+
+    var grid = document.getElementById(tabId === 'past' ? 'pastGallery' : 'photoGallery');
+    if (!grid) return;
+
+    var existingBanner = document.getElementById('albumBanner');
+    if (existingBanner) existingBanner.remove();
+
+    var banner = document.createElement('div');
+    banner.id = 'albumBanner';
+    banner.className = 'album-banner';
+    banner.innerHTML =
+      '<span><i class="fas fa-images"></i> Viewing album: <strong>' + album.name + '</strong></span>' +
+      '<button type="button" class="album-banner-clear">Show All Photos <i class="fas fa-times"></i></button>';
+    grid.parentElement.insertBefore(banner, grid);
+
+    banner.querySelector('.album-banner-clear').addEventListener('click', function () {
+      banner.remove();
+      grid.querySelectorAll('.gallery-card').forEach(function (c) {
+        c.style.display = '';
+        c.style.opacity = '';
+        c.style.transform = '';
+        c.classList.add('visible');
+      });
+    });
+
+    grid.querySelectorAll('.gallery-card').forEach(function (c) {
+      var match = c.dataset.album === album.id;
+      if (match) {
+        c.style.display = '';
+        c.style.opacity = '';
+        c.style.transform = '';
+        c.classList.add('visible');
+      } else {
+        c.style.display = 'none';
+      }
+    });
+
+    banner.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   /* ── Filters (smooth fade) ──────────────── */

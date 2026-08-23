@@ -135,13 +135,16 @@ All gallery content is managed through one file: **`gallery-data.js`**
 
 ### Adding an Album
 
-Add to both `albums` and `past` arrays in `gallery-data.js`:
+Add an entry to the `albums` array, then tag each photo it should contain with a matching `album` id (in the `photos` array for a regular album, or the `past` array for a Historical-style album — add `type: 'past'` to the album entry in that case). Clicking the album card in the Albums tab filters the right tab down to just those tagged photos.
 ```js
 // In albums:
-{ id: 'navaratri-2025', name: 'Navaratri 2025', cover: 'past/cover.jpg', count: 12, year: '2025' },
+{ id: 'navaratri-2025', name: 'Navaratri 2025', cover: 'ceremony/photo1.jpg', count: 12, year: '2025' },
 
-// In past:
-{ file: 'past/photo1.jpg', caption: 'Navaratri evening', year: '2025', category: 'ceremony' },
+// In photos — tag each photo that belongs to the album:
+{ file: 'ceremony/photo1.jpg', caption: 'Navaratri evening', category: 'ceremony', date: '2025-10', album: 'navaratri-2025' },
+
+// For a Historical-style album instead, add type: 'past' to the album entry
+// and tag photos in the `past` array (which uses `year`, not `date`) the same way.
 ```
 
 ---

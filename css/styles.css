@@ -1478,6 +1478,35 @@ h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--secondary); line
 .gallery-tab-content { display: none; }
 .gallery-tab-content.active { display: block; }
 
+.album-card { transition: var(--transition); cursor: pointer; }
+.album-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+.album-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--white);
+    padding: 14px 20px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+.album-banner i { margin-right: 6px; }
+.album-banner-clear {
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+.album-banner-clear:hover { background: rgba(255,255,255,0.35); }
+
 /* ============================================
    Online Services Page
    ============================================ */
